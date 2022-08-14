@@ -24,4 +24,4 @@ This project is licensed under MIT License.
 ```
 
 # Author
-[@ The Darkest Boy in the world](https://instagram/n0t.4vailable)
+[@NotAvailable](https://instagram/n0t.4vailable)
