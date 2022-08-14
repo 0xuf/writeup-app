@@ -1,5 +1,5 @@
 .idea/
-versions/
+versions/*
 .toml
 config.toml
 *.toml
