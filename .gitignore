@@ -3,3 +3,5 @@ versions/
 .toml
 config.toml
 *.toml
+database.db
+__pycache__/
