@@ -5,3 +5,6 @@ script_working_alert_webhook = ""
 
 [medium]
 tags = ["bug-bounty-writeup", "bugbounty-writeup"]
+
+[database]
+uri = "sqlite:///database.db"
