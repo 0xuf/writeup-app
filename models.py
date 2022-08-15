@@ -1,5 +1,5 @@
 from sqlalchemy import (
-    Column, Integer, String
+    Column, Integer, String, Boolean
 )
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -19,4 +19,11 @@ class Log(Base):
     url = Column(String)
     title = Column(String)
     author = Column(String)
-    platform = Column(String)
+    author_url = Column(String)
+
+
+class App(Base):
+    __tablename__ = 'app'
+
+    id = Column(Integer, primary_key=True)
+    first_launch = Column(Boolean)
