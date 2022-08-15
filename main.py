@@ -1,4 +1,5 @@
 import logging
+from requests.exceptions import MissingSchema
 from platforms import (
     PentesterlandScrapper, MediumScrapper
 )
@@ -154,5 +155,8 @@ class WriteupApp:
 if __name__ == "__main__":
     cleanup()
     ascii_art()
-    instance = WriteupApp()
-    instance.main()
+    try:
+        instance = WriteupApp()
+        instance.main()
+    except MissingSchema:
+        log.error("Add Discord webhooks into config.toml file.")
