@@ -28,7 +28,7 @@ crontab -e
 0 * * * * /usr/bin/python3 /path/to/main.py
 ```
 
-## You can also
+## You can also scrap more posts from the medium.com by adding more tags to the config.toml
 
 # License
 ```
