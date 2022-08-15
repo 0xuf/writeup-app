@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 
 
 class MediumScrapper:
+    """
+    This class will scrap the medium.com
+    """
     medium_url = "https://medium.com/{}"
     output_data = []
     BASE_URL = "https://medium.com/tag/{}/latest"
@@ -19,7 +22,10 @@ class MediumScrapper:
 
     def __init__(self, tag: str) -> None:
         """
+        Constructor method
         :param tag: receives the information based on the tag parameter
+        :return: Nothing
+        :rtype: None
         """
         self.tag = tag
         self.BASE_URL = self.BASE_URL.format(tag)
@@ -28,10 +34,15 @@ class MediumScrapper:
         """
         This method receives the posts and outputs them as a list
         :return: all_posts
+        :type: list
         """
         _resp = get(url=self.BASE_URL, headers=self.headers)
+        # Parse the html with BS4
         bs = BeautifulSoup(_resp.content.decode('utf-8'), 'html.parser')
+
         all_posts = bs.findAll("div", class_="kj kk kl l")
+
+        # Extract data from medium.com posts
         for post in all_posts:
             _author = dict(
                 name=post.findNext(
