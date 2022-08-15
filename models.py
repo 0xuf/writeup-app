@@ -1,4 +1,6 @@
-from sqlalchemy import create_engine, Column, Integer, String, DateTime
+from sqlalchemy import (
+    Column, Integer, String
+)
 from sqlalchemy.ext.declarative import declarative_base
 
 from tomli import load
@@ -14,7 +16,6 @@ class Log(Base):
     __tablename__ = 'log'
 
     id = Column(Integer, primary_key=True)
-    date = Column(DateTime)
     url = Column(String)
     title = Column(String)
     author = Column(String)
