@@ -1,1 +1,2 @@
 from platforms.medium import MediumScrapper
+from platforms.pentesterland import PentesterlandScrapper
