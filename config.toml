@@ -2,3 +2,6 @@
 writeup_notif_webhook = ""
 script_working_alert_webhook = ""
 
+
+[medium]
+tags = ["bug-bounty-writeup", "bugbounty-writeup"]
