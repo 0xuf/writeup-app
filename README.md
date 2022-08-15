@@ -13,6 +13,8 @@ Writeup-app is a simple program for sending notifications of new bug bounty writ
 # installation
 Edit config.toml file and put your discord webhooks in it.
 ```commandline
+git clone https://github.com/0xuf/writeup-app.git
+cd writeup-app
 pip install -r requirements.txt
 alembic revision --autogenerate -m "Create Writeup models"
 alembic upgrade head
