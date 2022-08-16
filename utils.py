@@ -65,9 +65,17 @@ def notify_writeup(notify_webhook: str, data) -> bool:
     """
     author = data.get("author")
     _post = data.get("post")
-    parse_data = f"🟢 New WriteUp !\n\n" \
-                 f"🖇 WriteUp Link: ||[{_post['title']}]({_post['link']})||\n\n" \
-                 f"🧑‍💻 Writeup Author: ||[{author['name']}]({author['username']})||\n"
+
+    # Check Author username is None or not
+    if author["username"] is None:
+        parse_data = f"🟢 New WriteUp !\n\n" \
+                     f"🖇 WriteUp Link: ||[{_post['title']}]({_post['link']})||\n\n" \
+                     f"🧑‍💻 Writeup Author: ||{author['name']}||\n"
+    else:
+        parse_data = f"🟢 New WriteUp !\n\n" \
+                     f"🖇 WriteUp Link: ||[{_post['title']}]({_post['link']})||\n\n" \
+                     f"🧑‍💻 Writeup Author: ||[{author['name']}]({author['username']})||\n"
+
     data = dict(
         content=parse_data
     )
