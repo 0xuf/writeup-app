@@ -73,7 +73,3 @@ class MediumScrapper:
             )
 
         return self.output_data
-
-
-_instance = MediumScrapper('bug-bounty-writeup')
-_instance.get_response()
