@@ -63,8 +63,7 @@ class MediumScrapper:
                 link=self.medium_url.format(post.findNext(
                     "a",
                     {"aria-label": "Post Preview Title"}
-                ).attrs['href'].split("?")[0].replace("/", "")
-                                            ))
+                ).attrs['href'].split("?")[0]))
 
             self.output_data.append(
                 {
@@ -74,3 +73,7 @@ class MediumScrapper:
             )
 
         return self.output_data
+
+
+_instance = MediumScrapper('bug-bounty-writeup')
+_instance.get_response()
